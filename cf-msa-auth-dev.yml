@@ -10,12 +10,6 @@ spring:
     hibernate:
       ddl-auto: update
 
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/auth
-    username: auth
-    password: koscom
-
   boot:
     admin:
       auto-deregistration: false
