@@ -5,22 +5,16 @@ spring:
       client:
         composite-indicator:
           enabled: false
-          
+
   jpa:
     hibernate:
       ddl-auto: update
 
-  # h2:
-  #   console:
-  #     enabled: true
-  #     settings:
-  #       web-allow-others: true
-
-  # datasource:
-  #   driver-class-name: org.h2.Driver
-  #   url: jdbc:h2:mem:auth
-  #   username: auth
-  #   password: koscom
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/auth
+    username: auth
+    password: koscom
 
   boot:
     admin:
