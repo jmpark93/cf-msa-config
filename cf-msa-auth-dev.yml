@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: ${vcap.application.application_name:""}
+
+  boot:
+    admin:
+      client:
+        url: https://msa-bootadmin.cf.intl
+        username: admin
+        password: koscom!234
+        instance:
+          service-url: http://${vcap.application.application_uris[0]}
+          metadata:
+            tags:
+              Organization: ${vcap.application.organization_name}
+              Space: ${vcap.application.space_name}
+              APP-INDEX: ${vcap.application.instance_index}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:auth
+    username: auth
+    password: koscom
+
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+config:
+  swagger:
+    enabled: true
+  oauth2:
+    client-id: jmworks
+    client-secret: jmworksOauthSecret
+    jwt-signkey: jmworksJwtSecret
