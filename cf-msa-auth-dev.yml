@@ -1,5 +1,21 @@
 spring:
 
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  # h2:
+  #   console:
+  #     enabled: true
+  #     settings:
+  #       web-allow-others: true
+
+  # datasource:
+  #   driver-class-name: org.h2.Driver
+  #   url: jdbc:h2:mem:auth
+  #   username: auth
+  #   password: koscom
+
   boot:
     admin:
       auto-deregistration: false
@@ -14,33 +30,6 @@ spring:
               Organization: ${vcap.application.organization_name}
               Space: ${vcap.application.space_name}
               APP-INDEX: ${vcap.application.instance_index}
-              
-  jpa:
-    hibernate:
-      ddl-auto: update
-
-  h2:
-    console:
-      enabled: true
-      settings:
-        web-allow-others: true
-
-  datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:auth
-    username: auth
-    password: koscom
-
-management:
-  endpoint:
-    shutdown:
-      enabled: true
-    health:
-      show-details: always
-  endpoints:
-    web:
-      exposure:
-        include: "*"
 
 config:
   swagger:
@@ -49,3 +38,14 @@ config:
     client-id: jmworks
     client-secret: jmworksOauthSecret
     jwt-signkey: jmworksJwtSecret
+
+management:
+  endpoint:
+    shutdown:
+      enabled: false
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
