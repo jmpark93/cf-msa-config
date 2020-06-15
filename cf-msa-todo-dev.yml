@@ -1,5 +1,11 @@
 spring:
 
+  cloud:
+    discovery:
+      client:
+        composite-indicator:
+          enabled: false
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -47,4 +53,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"              
+        include: "*"        
