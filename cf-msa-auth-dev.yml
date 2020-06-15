@@ -5,7 +5,7 @@ spring:
   boot:
     admin:
       client:
-        url: https://msa-bootadmin.cf.intl
+        url: http://msa-bootadmin.cf.intl
         username: admin
         password: koscom!234
         instance:
