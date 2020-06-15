@@ -1,9 +1,8 @@
 spring:
-  application:
-    name: ${vcap.application.application_name:""}
 
   boot:
     admin:
+      auto-deregistration: false
       client:
         url: http://msa-bootadmin.cf.intl
         username: admin
@@ -15,7 +14,7 @@ spring:
               Organization: ${vcap.application.organization_name}
               Space: ${vcap.application.space_name}
               APP-INDEX: ${vcap.application.instance_index}
-
+              
   jpa:
     hibernate:
       ddl-auto: update
