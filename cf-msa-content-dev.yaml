@@ -6,11 +6,6 @@ spring:
         composite-indicator:
           enabled: false
 
-  jpa:
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-    hibernate:
-      ddl-auto: update
-
   boot:
     admin:
       auto-deregistration: false
@@ -26,21 +21,20 @@ spring:
               Space: ${vcap.application.space_name}
               APP-INDEX: ${vcap.application.instance_index}
 
-config:
-  oauth2:
-    clientId: jmworks
-    clientSecret: jmworksOauthSecret
-    jwt-signkey: jmworksJwtSecret
+security:
   swagger:
     enabled: false
+  oauth2:
+    jwt:
+      signkey: jmworksJwtSecret
 
 management:
   endpoint:
     shutdown:
-      enabled: false
+      enabled: true
     health:
       show-details: always
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: "*"        
