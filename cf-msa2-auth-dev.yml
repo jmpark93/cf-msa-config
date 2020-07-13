@@ -1,0 +1,51 @@
+spring:
+
+  cloud:
+    discovery:
+      client:
+        composite-indicator:
+          enabled: false
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/auth
+    username: auth
+    password: koscom
+
+  boot:
+    admin:
+      auto-deregistration: false
+      client:
+        url: http://msa-bootadmin.cf.intl
+        username: admin
+        password: koscom!234
+        instance:
+          service-url: http://${vcap.application.application_uris[0]}
+          metadata:
+            tags:
+              Organization: ${vcap.application.organization_name}
+              Space: ${vcap.application.space_name}
+              APP-INDEX: ${vcap.application.instance_index}
+
+config:
+  swagger:
+    enabled: true
+  oauth2:
+    client-id: jmworks
+    client-secret: jmworksOauthSecret
+    jwt-signkey: jmworksJwtSecret
+
+management:
+  endpoint:
+    shutdown:
+      enabled: false
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
