@@ -5,6 +5,7 @@ spring:
       client:
         composite-indicator:
           enabled: false
+          
     stream:
       bindings:
         input:
@@ -40,6 +41,12 @@ spring:
               Organization: ${vcap.application.organization_name}
               Space: ${vcap.application.space_name}
               APP-INDEX: ${vcap.application.instance_index}
+
+s3:
+  endpoint: https://msa2-minio.k8s.kpaasta.io
+  accessKey: JMWorks
+  secretKey: JMWorksSecret
+  bucket: bucket-download
 
 security:
   swagger:
