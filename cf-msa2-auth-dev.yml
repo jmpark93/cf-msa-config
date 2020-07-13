@@ -5,7 +5,7 @@ spring:
       client:
         composite-indicator:
           enabled: false
-          
+
     stream:
       bindings:
         output:
@@ -44,12 +44,13 @@ spring:
               APP-INDEX: ${vcap.application.instance_index}
 
 config:
+  oauth2:
+    url: http://localhost:8081/oauth/token
+    clientId: jmworks
+    clientSecret: jmworksOauthSecret
+    jwt-signkey: jmworksJwtSecret
   swagger:
     enabled: true
-  oauth2:
-    client-id: jmworks
-    client-secret: jmworksOauthSecret
-    jwt-signkey: jmworksJwtSecret
 
 s3:
   endpoint: https://msa2-minio.k8s.kpaasta.io
