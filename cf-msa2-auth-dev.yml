@@ -5,6 +5,17 @@ spring:
       client:
         composite-indicator:
           enabled: false
+    stream:
+      bindings:
+        output:
+          destination: msa2.mgmt
+          contentType: application/json
+
+  rabbitmq:
+    host: k8sworker.service.kosgov
+    port: 31672
+    username: admin
+    password: adminSecret
 
   jpa:
     hibernate:
