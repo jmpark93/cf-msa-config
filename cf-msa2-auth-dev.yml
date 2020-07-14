@@ -53,10 +53,10 @@ config:
     enabled: true
 
 s3:
-  endpoint: https://msa2-minio.k8s.kpaasta.io
+  endpoint: https://msa2-minio.k8s.intl
   accessKey: JMWorks
   secretKey: JMWorksSecret
-  bucket: bucket-download
+  bucket: bucket-download  
 
 management:
   endpoint:
@@ -66,5 +66,5 @@ management:
       show-details: always
   endpoints:
     web:
-      exposure:
+       exposure:
         include: "*"
