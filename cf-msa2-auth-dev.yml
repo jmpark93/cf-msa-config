@@ -57,7 +57,7 @@ s3:
   public: https://msa2-minio.k8s.kpaasta.io
   accessKey: JMWorks
   secretKey: JMWorksSecret
-  bucket: bucket-download  
+  bucket: msa2-public  
 
 management:
   endpoint:
