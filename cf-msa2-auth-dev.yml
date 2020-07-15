@@ -2,8 +2,8 @@ spring:
 
   servlet:
     multipart:
-      max-file-size: 10M
-      max-request-size: 10M
+      max-file-size: 10MB
+      max-request-size: 10MB
   
   cloud:
     discovery:
