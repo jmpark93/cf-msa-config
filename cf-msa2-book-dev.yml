@@ -1,5 +1,10 @@
 spring:
 
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+      
   cloud:
     discovery:
       client:
@@ -43,7 +48,7 @@ spring:
               APP-INDEX: ${vcap.application.instance_index}
 
 s3:
-  endpoint: https://msa2-minio.k8s.kpaasta.io
+  endpoint: https://msa2-minio.k8s.intl
   public: https://msa2-minio.k8s.kpaasta.io  
   accessKey: JMWorks
   secretKey: JMWorksSecret
