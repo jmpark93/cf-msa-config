@@ -36,11 +36,11 @@ spring:
     admin:
       auto-deregistration: false
       client:
-        url: http://msa-bootadmin.cf.intl
+        url: https://msa-bootadmin.cf.intl
         username: admin
         password: koscom!234
         instance:
-          service-url: http://${vcap.application.application_uris[0]}
+          service-url: https://${vcap.application.application_uris[0]}
           metadata:
             tags:
               Organization: ${vcap.application.organization_name}
